@@ -1,0 +1,70 @@
+          ORG 100
+          Load        Sym
+          Output            /output the > symple
+          Input
+          Store       X
+          Load        X
+          Subt        Ctr
+          Skipcond    800   / Check if the user input is '!'
+          Jump        BYE   / If input is '!', jump to BYE
+          Load        X
+          Output            /Input X, Store and display
+Loop,     Load        Plus  /Display + symble
+          Output      
+          Input             /Input Y, Store and display
+          Store       Y
+          Output      
+          Load        Equal /Load = symble
+          Output            /Display = symble
+          Load        X     /Sum up
+          Subt        Zero
+          Store       NumX
+          Load        Y    
+          Subt        Zero
+          Store       NumY
+          Load        Zero
+          Add         NumX
+          Add         NumY
+          Output      Sum
+          
+          Input             /check if program run again or shunt down
+          Store       Temp
+          Load        Temp  
+          Subt        Ctr
+          Skipcond    800   / Check if the user input is '!'
+          Jump        BYE   / If input is '!', jump to BYE
+          Load        Temp  / Reload input
+          Store       X     / Store in X
+          Clear       Temp
+          Load        Sym   / reoutput the symble
+          Output 
+          Load        X   / reoutput the X
+          Output    
+          Jump        Loop  /  continue the loop to accept the second digit input
+
+BYE,      Load       Bletter 
+          Output
+          Load       Yletter 
+          Output
+          Load       Eletter 
+          Output
+          Halt        
+
+
+One,      Dec         1     /used to increment and decrement by 1 
+Addr,     Dec         0
+Next,     Dec         0
+Sum,      Dec         0
+Ctr,      Dec         33
+X,        Dec         0
+Y,        Dec         0
+Sym,      Dec         62
+Plus,     Dec         43
+Equal,    Dec         61
+Zero,     Dec         48
+NumX,     Dec         0
+NumY,     Dec         0
+Bletter,  Dec         66
+Yletter,  Dec         89
+Eletter,  Dec         69 
+Temp,     Dec         0 

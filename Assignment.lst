@@ -1,0 +1,102 @@
+     Assembly listing for: Sum.mas
+                Assembled: Wed Nov 15 00:44:24 EST 2023
+
+         |          ORG 100            
+100 1137 |          LOAD Sym           
+101 6000 |          OUTPUT            /output the > symple
+102 5000 |          INPUT              
+103 2135 |          STORE X            
+104 1135 |          LOAD X             
+105 4134 |          SUBT Ctr           
+106 8800 |          SKIPCOND 800      / Check if the user input is '!'
+107 9129 |          JUMP BYE          / If input is '!', jump to BYE
+108 1135 |          LOAD X             
+109 6000 |          OUTPUT            /Input X, Store and display
+10A 1138 |  Loop    LOAD Plus         /Display + symble
+10B 6000 |          OUTPUT             
+10C 5000 |          INPUT             /Input Y, Store and display
+10D 2136 |          STORE Y            
+10E 6000 |          OUTPUT             
+10F 1139 |          LOAD Equal        /Load = symble
+110 6000 |          OUTPUT            /Display = symble
+111 1135 |          LOAD X            /Sum up
+112 413A |          SUBT Zero          
+113 213B |          STORE NumX         
+114 1136 |          LOAD Y             
+115 413A |          SUBT Zero          
+116 213C |          STORE NumY         
+117 113A |          LOAD Zero          
+118 313B |          ADD NumX           
+119 313C |          ADD NumY           
+11A 6000 |          OUTPUT             
+         |                                      
+11B 5000 |          INPUT             /check if program run again or shunt down
+11C 2140 |          STORE Temp         
+11D 1140 |          LOAD Temp          
+11E 4134 |          SUBT Ctr           
+11F 8800 |          SKIPCOND 800      / Check if the user input is '!'
+120 9129 |          JUMP BYE          / If input is '!', jump to BYE
+121 1140 |          LOAD Temp         / Reload input
+122 2135 |          STORE X           / Store in X
+123 A000 |          CLEAR              
+124 1137 |          LOAD Sym          / reoutput the symble
+125 6000 |          OUTPUT             
+126 1135 |          LOAD X            / reoutput the X
+127 6000 |          OUTPUT             
+128 910A |          JUMP Loop         /  continue the loop to accept the second digit input
+         |                            
+129 113D |  BYE     LOAD Bletter       
+12A 6000 |          OUTPUT             
+12B 113E |          LOAD Yletter       
+12C 6000 |          OUTPUT             
+12D 113F |          LOAD Eletter       
+12E 6000 |          OUTPUT             
+12F 7000 |          HALT               
+         |                            
+         |                            
+130 0001 |  One     DEC 1             /used to increment and decrement by 1 
+131 0000 |  Addr    DEC 0              
+132 0000 |  Next    DEC 0              
+133 0000 |  Sum     DEC 0              
+134 0021 |  Ctr     DEC 33             
+135 0000 |  X       DEC 0              
+136 0000 |  Y       DEC 0              
+137 003E |  Sym     DEC 62             
+138 002B |  Plus    DEC 43             
+139 003D |  Equal   DEC 61             
+13A 0030 |  Zero    DEC 48             
+13B 0000 |  NumX    DEC 0              
+13C 0000 |  NumY    DEC 0              
+13D 0042 |  Bletter DEC 66             
+13E 0059 |  Yletter DEC 89             
+13F 0045 |  Eletter DEC 69             
+140 0000 |  Temp    DEC 0              
+
+Assembly successful.
+
+         SYMBOL TABLE
+         ---------------------------------------------------
+          Symbol  | Defined | References 
+         ---------+---------+-------------------------------
+          Addr    |   131   | 
+          BYE     |   129   | 107, 120
+          Bletter |   13D   | 129
+          Ctr     |   134   | 105, 11E
+          Eletter |   13F   | 12D
+          Equal   |   139   | 10F
+          Loop    |   10A   | 128
+          Next    |   132   | 
+          NumX    |   13B   | 113, 118
+          NumY    |   13C   | 116, 119
+          One     |   130   | 
+          Plus    |   138   | 10A
+          Sum     |   133   | 
+          Sym     |   137   | 100, 124
+          Temp    |   140   | 11C, 11D, 121
+          X       |   135   | 103, 104, 108, 111, 122, 126
+          Y       |   136   | 10D, 114
+          Yletter |   13E   | 12B
+          Zero    |   13A   | 112, 115, 117
+         ---------------------------------------------------
+
+

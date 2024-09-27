@@ -1,0 +1,23 @@
+ ------------------
+ Symbol  | Location
+ --------+---------
+ Addr    |   131
+ BYE     |   129
+ Bletter |   13D
+ Ctr     |   134
+ Eletter |   13F
+ Equal   |   139
+ Loop    |   10A
+ Next    |   132
+ NumX    |   13B
+ NumY    |   13C
+ One     |   130
+ Plus    |   138
+ Sum     |   133
+ Sym     |   137
+ Temp    |   140
+ X       |   135
+ Y       |   136
+ Yletter |   13E
+ Zero    |   13A
+
